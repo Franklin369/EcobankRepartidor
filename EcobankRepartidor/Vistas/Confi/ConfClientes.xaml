@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="EcobankRepartidor.Vistas.Confi.ConfClientes"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             NavigationPage.HasNavigationBar="False">
+
+
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="80,*">
+            <degradado:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"
+                                       Grid.RowSpan="2">
+
+
+                <degradado:PancakeView.BackgroundGradientStops>
+                    <degradado:GradientStopCollection>
+                        <degradado:GradientStop Color="#82FCC1" Offset="0.0" />
+                        <degradado:GradientStop Color="#BFFF97" Offset="0.9" />
+                        <!--<degradado:GradientStop Color="#3D57AB" Offset="0.5" />-->
+                        <!--<yummy:GradientStop Color="#0000FF" Offset="1" />-->
+                    </degradado:GradientStopCollection>
+                </degradado:PancakeView.BackgroundGradientStops>
+
+
+
+            </degradado:PancakeView>
+
+            <ImageButton Source="flecha.png"
+                   HeightRequest="22" BackgroundColor="Transparent"
+                   Margin="10,30,0,0" HorizontalOptions="Start"
+                              Command="{Binding Volvercomman}"/>
+            <ScrollView  Grid.Row="1">
+                <StackLayout Margin="10" IsVisible="{Binding Panelregistro}" x:Name="Panelregistro"
+                             Grid.Row="1">
+                    <Frame Padding="0"
+                           CornerRadius="15">
+                        <Frame.Background>
+                            <LinearGradientBrush EndPoint="0,1">
+                                <GradientStop x:Name="Gra1" Color="#151515"
+                                                  
+                          Offset="0.1" />
+                                <GradientStop x:Name="Gra2" Color="#151515"
+                          Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout x:Name="Panelnombres"
+                                     Margin="20">
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Identificacion"
+                           FontSize="18"
+                           VerticalTextAlignment="Center"
+                           
+                               TextColor="White"/>
+                                <Entry Text="{Binding Identificaciontxt}"
+                           FontAttributes="Bold"
+                           HorizontalOptions="FillAndExpand"
+                          TextColor="White"
+                        FontSize="30"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Nombr. y apellidos:"
+                           FontSize="18"
+                           VerticalTextAlignment="Center"
+                           
+                               TextColor="White"/>
+                                <Entry Text="{Binding NombresApellidtxt}"
+                          TextColor="White"
+                           HorizontalOptions="FillAndExpand"
+                            FontSize="30"
+                            TextTransform="Uppercase"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Direccion:"
+                       FontSize="18"
+                           VerticalTextAlignment="Center"
+                          TextColor="White"/>
+                                <Entry FontSize="20" Text="{Binding Direcciontxt}"
+                       HorizontalOptions="FillAndExpand"
+                    TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Pais:"
+                       FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                          StyleClass="lblsubtitulos"/>
+                        <Picker HorizontalOptions="FillAndExpand"
+                                ItemsSource="{Binding Listpais}"
+                                ItemDisplayBinding="{Binding Pais}"
+                                SelectedItem="{Binding SelectPais}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Departamento:"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Center"
+                      StyleClass="lblsubtitulos"/>
+                        <Picker HorizontalOptions="FillAndExpand"
+                                ItemsSource="{Binding ListDepa}"
+                                ItemDisplayBinding="{Binding Departamento}"
+                                SelectedItem="{Binding SelectDepa}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Provincia:"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Center"
+                       StyleClass="lblsubtitulos"/>
+                        <Picker HorizontalOptions="FillAndExpand"
+                                ItemsSource="{Binding ListProv}"
+                                ItemDisplayBinding="{Binding Provincia}"
+                                SelectedItem="{Binding SelectProv}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Distrito:"
+                       FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                          StyleClass="lblsubtitulos"/>
+                        <Picker HorizontalOptions="FillAndExpand"
+                                ItemsSource="{Binding ListDistr}"
+                                ItemDisplayBinding="{Binding Distrito}"
+                                SelectedItem="{Binding SelectDist}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Zona:"
+                       FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                          StyleClass="lblsubtitulos"/>
+                        <Picker HorizontalOptions="FillAndExpand"
+                                ItemsSource="{Binding ListZona}"
+                                ItemDisplayBinding="{Binding Zona}"
+                                SelectedItem="{Binding SelectZona}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Foto fachada de casa:"
+                       FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           StyleClass="lblsubtitulos"/>
+                        <ImageButton HeightRequest="40"
+                             Source="patron.png"
+                             BackgroundColor="Transparent"
+                             Command="{Binding Capturarcommand}"/>
+                        <ImageButton Source="{Binding Foto}"
+                               BackgroundColor="Transparent"
+                                    CornerRadius="5"
+                       HeightRequest="80"/>
+                    </StackLayout>
+                    <Button  Text="Siguiente"
+                    Command="{Binding MostrarpanelGeoCommand}"
+                    HorizontalOptions="Center"
+                    BackgroundColor="#151515"
+                     TextColor="White"
+                    CornerRadius="15"
+                     Margin="0,0,0,10"
+                   />
+                </StackLayout>
+            </ScrollView>
+            <StackLayout IsVisible="{Binding PanelGeolocalizacion}" x:Name="panelGeolocalizacion"
+                    VerticalOptions="Center"  Grid.Row="1"
+                             >
+                <Label Text="Geolocalizar"
+                           
+                           HorizontalOptions="Center"
+                           FontSize="30"
+                           FontAttributes="Bold"/>
+                <ImageButton Source="https://i.ibb.co/KsppHRw/002-de-origen-local-1.png"
+                                 HeightRequest="80"
+                                 HorizontalOptions="Center"
+                                 Padding="10"
+                                 BorderColor="White"
+                                 BorderWidth="4"
+                                 CornerRadius="20"
+                                 BackgroundColor="#6FEDB4"
+                                 Command="{Binding NavegarPagLocalicommand}"/>
+
+                <Label Text="...esperando coordenadas"
+                           HorizontalOptions="Center"
+                           TextColor="#A3FFA9"/>
+                <Button Text="Guardar"
+                            HorizontalOptions="Center"
+                            CornerRadius="10"
+                            BackgroundColor="White"
+                            FontAttributes="Bold"
+                            Command="{Binding Agregarclientecommand}"/>
+                <Button Text="Volver"
+                            HorizontalOptions="Center"
+                            CornerRadius="10"
+                            BackgroundColor="Transparent"
+                            FontAttributes="Bold"
+                            Command="{Binding MostrarpanelRegistrocommand}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" IsVisible="{Binding PanelRegistrado}">
+                <lottie:AnimationView  
+                                 Animation="bici.json"
+                                 AutoPlay="True"
+                                 HeightRequest="250"
+                                 WidthRequest="300"
+                                 RepeatMode="Infinite"
+                                 VerticalOptions="Center"
+                                 />
+                <Label Text="Héroe registrado"
+                       HorizontalOptions="Center"
+                       FontSize="30"
+                       FontAttributes="Bold"/>
+                <Button Text="Aceptar"
+                        HorizontalOptions="Center"
+                        CornerRadius="10"
+                        BackgroundColor="White"
+                        FontAttributes="Bold"
+                        Command="{Binding Volvercomman}"/>
+            </StackLayout>
+        </Grid>
+
+
+
+    </ContentPage.Content>
+</ContentPage>

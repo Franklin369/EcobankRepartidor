@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcobankRepartidor.Vistas.Vercliente"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 NavigationPage.HasNavigationBar="False">
+    <Frame Margin="30"
+           CornerRadius="30"
+           Padding="0"
+           HasShadow="False">
+        <Frame.Background>
+            <LinearGradientBrush EndPoint="1,0">
+                <GradientStop x:Name="Gra1" Color="#aaffa9"
+                                                  
+                          Offset="0.1" />
+                <GradientStop x:Name="Gra2" Color="#11ffbd"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </Frame.Background>
+        <Grid RowDefinitions="200,*"
+              >
+     
+            <StackLayout Margin="20,20,0,0"
+                         VerticalOptions="Center">
+                <Button Text="Volver"
+                        CornerRadius="15"
+                        BackgroundColor="White"
+                        HorizontalOptions="EndAndExpand"
+                        x:Name="btnvolver"
+                        Clicked="btnvolver_Clicked"
+                        Margin="0,0,20,0"/>
+                <Label Text="Nombre"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       x:Name="lblnombre"/>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="https://i.ibb.co/F5YDdV4/herramienta.png"
+                           WidthRequest="20"/>
+                    <Label x:Name="lbldireccion"
+                        Text="Direccion"
+                       FontSize="20"
+                       FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="https://i.ibb.co/4Pn6c2W/patron.png"
+                           WidthRequest="20"/>
+                    <Label Text="Identificacion"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                           x:Name="lbldni"/>
+                </StackLayout>
+
+            </StackLayout>
+           
+                  <ImageButton Grid.Row="1"
+                   Source="https://i.ibb.co/Tm7PSfn/240503054-458547195659912-1073137778170911456-n.jpg"
+                   Margin="10"
+                               BackgroundColor="#6FEDB4"
+                               CornerRadius="15"
+                               Padding="10"
+                               x:Name="fotofachada"/>
+
+          
+
+        </Grid>
+    </Frame>
+    
+   
+    
+</popup:PopupPage>

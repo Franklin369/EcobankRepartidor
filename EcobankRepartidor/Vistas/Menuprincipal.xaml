@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="EcobankRepartidor.Vistas.Menuprincipal"
+             xmlns:sombras="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:sk="clr-namespace:Xamarin.Forms.Skeleton;assembly=Xamarin.Forms.Skeleton"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+          <Grid RowDefinitions="280,130,*" BackgroundColor="#E9EDF3">
+        
+        <sombras:Shadows CornerRadius="10" Grid.Row="0"
+            Shades="{sombras:SingleShade Offset='0, 15',
+                                    Opacity=0.1,
+                                    Color=Gray}">
+            <degradado:PancakeView CornerRadius="0,0,30,30"
+                              BackgroundColor="White"
+            BackgroundGradientStartPoint="0.9,0.1" BackgroundGradientEndPoint="0.1,1">
+
+            <sombras:Shadows CornerRadius="60"  
+            Shades="{sombras:SingleShade Offset='0, 10',
+                                    Opacity=0.5,
+                                    Color=#11ffbd}">
+            <Frame Margin="15,30,15,30"
+                   CornerRadius="15" HasShadow="False">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop x:Name="Gra1" Color="#aaffa9"
+                                                  
+                          Offset="0.1" />
+                        <GradientStop x:Name="Gra2" Color="#11ffbd"
+                          Offset="1.0" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+                        <StackLayout>
+                            <Label Text="{Binding txtNombre}"
+                                       FontAttributes="Bold"
+                                       FontSize="25"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#09553E"
+                                       VerticalTextAlignment="Center"/>
+                            <Grid ColumnDefinitions="*,auto">
+                                <StackLayout>
+                                    <Image Source="patron.png"
+                                               HeightRequest="30"
+                                               HorizontalOptions="Start"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Eco"
+                                               CharacterSpacing="10"
+                                               FontAttributes="Bold"
+                                               FontSize="18"
+                                                    VerticalOptions="Center"/>
+                                        <Button Text="BANK"
+                                                    BackgroundColor="#15ECAF"
+                                                    TextColor="White"
+                                                    CornerRadius="15"
+                                                    FontAttributes="Bold"
+                                                    FontSize="20"/>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" >
+                                        <StackLayout>
+                                            <Label Text="Asignaciones"
+                                       FontAttributes="Bold"
+                                       FontSize="11"
+                                       TextColor="#00553D"/>
+                                            <Label Text="{Binding txtContadorAsig}"
+                                       FontAttributes="Bold"
+                                       FontSize="16"
+                                       TextColor="#00553D"/>
+
+
+                                        </StackLayout>
+                                    
+                                    </StackLayout>
+
+
+
+                                    <StackLayout Orientation="Horizontal">
+
+
+                                    </StackLayout>
+                                  
+                                </StackLayout>
+                                <Image  Grid.Column="1"
+                                        Source="luz.png"
+                                            HorizontalOptions="End"
+                                            Margin="0,10,0,0"
+                                        />
+                            </Grid>
+
+                        </StackLayout>
+
+                    </Frame>
+            </sombras:Shadows>
+        </degradado:PancakeView>
+        </sombras:Shadows>
+        <sombras:Shadows CornerRadius="10" Grid.Row="1" 
+            Shades="{sombras:SingleShade Offset='0, 15',
+                                    Opacity=0.1,
+                                    Color=Gray}">
+            <Frame  CornerRadius="20" Padding="10"
+                Margin="15,15,15,0" HasShadow="False">
+                <Grid ColumnDefinitions="*,*" VerticalOptions="Center">
+                    <StackLayout>
+                        <Frame HasShadow="False"
+                        Padding="0" CornerRadius="25"
+                           BackgroundColor="#EEF1FD"
+                          HorizontalOptions="Center">
+                            <ImageButton Source="https://i.ibb.co/LYW4wHb/carisma.png"
+                           HeightRequest="50"
+                                HorizontalOptions="Center"
+                                BackgroundColor="Transparent"
+                                      Padding="8"
+                                         Command="{Binding Afiliarcommand}"/>
+                        </Frame>
+
+                        <Label Text="AFILIAR"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="Black"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           CharacterSpacing="2"/>
+                    </StackLayout>
+                 
+                    <StackLayout Grid.Column="1">
+                        <Frame HasShadow="False"
+                        Padding="0" CornerRadius="25"
+                           BackgroundColor="#EBFAF9"
+                          HorizontalOptions="Center">
+                            <ImageButton Source="https://i.ibb.co/1LRYYLy/punto-de-encuentro.png"
+                           HeightRequest="50"
+                                HorizontalOptions="Center"
+                                BackgroundColor="Transparent"
+                                      Padding="8"
+                                     Command="{Binding Mapearcommand}"/>
+                        </Frame>
+
+                        <Label Text="MAPEAR"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="Black"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           CharacterSpacing="2"
+                           />
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </sombras:Shadows>
+        <Image Source="rama.png"
+               Grid.Row="2"
+               Margin="-30,10,20,-100"/>
+    </Grid>
+    </ScrollView>
+  
+</ContentPage>

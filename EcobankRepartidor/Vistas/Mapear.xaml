@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps" 
+             x:Class="EcobankRepartidor.Vistas.Mapear"
+             NavigationPage.HasNavigationBar="False">
+    <Grid BackgroundColor="#6FEDB4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" 
+              Margin="0,30,0,0">
+
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="flecha.png"
+                   HeightRequest="22" BackgroundColor="Transparent"
+                   Margin="10,0,0,0"
+                   x:Name="btnvolver"
+                             Clicked="btnvolver_Clicked"/>
+                <Button 
+                    Text="Ver"
+                   x:Name="btnver"
+                    BackgroundColor="White"
+                    HorizontalOptions="EndAndExpand"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Margin="0,4,0,4"
+                    VerticalOptions="Center"
+                    Clicked="btnver_Clicked"/>
+                <Button 
+                    Text="Comprar"
+                   x:Name="btnComprar"
+                    Clicked="btnComprar_Clicked"
+                    BackgroundColor="White"
+                    HorizontalOptions="EndAndExpand"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Margin="0,4,0,4"
+                    VerticalOptions="Center"/>
+
+                <Button 
+                    Text="Ir"
+                   
+                    BackgroundColor="White"
+                    HorizontalOptions="EndAndExpand"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    x:Name="btnconfirma"
+                   Clicked="btnconfirma_Clicked"
+                    Margin="0,4,8,4"
+                    VerticalOptions="Center"
+                 />
+
+            </StackLayout>
+
+        </Grid>
+        <maps:Map Grid.Row="1" 
+                  x:Name="map"
+                  HasZoomEnabled="True"
+                 
+                  >
+        
+        </maps:Map>
+
+    </Grid>
+</ContentPage>

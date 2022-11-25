@@ -1,0 +1,137 @@
+[
+    {
+        " featureType ": "todos" ,
+        " elementType ": "geometría" ,
+        " estilistas ": [
+            {
+                " color ": "# 202c3e" 
+            }
+        ]
+    } ,
+    {
+        " featureType ": "todos" ,
+        " elementType ": "tags.text.fill" ,
+        " estilistas ": [
+            {
+                " gamma ": 0.01 
+            } ,
+            {
+                " ligereza ": 20 
+            } ,
+            {
+                " peso ": "1,39" 
+            } ,
+            {
+                " color ": "#ffffff" 
+            }
+        ]
+    } ,
+    {
+        " featureType ": "todos" ,
+        " elementType ": "labels.text.stroke" ,
+        " estilistas ": [
+            {
+                " peso ": "0.96" 
+            } ,
+            {
+                " saturación ": "9" 
+            } ,
+            {
+                " visibilidad ": "activado" 
+            } ,
+            {
+                " color ": "# 000000" 
+            }
+        ]
+    } ,
+    {
+        " featureType ": "todos" ,
+        " elementType ": "tags.icon" ,
+        " estilistas ": [
+            {
+                " visibilidad ": "desactivado" 
+            }
+        ]
+    } ,
+    {
+        " featureType ": "paisaje" ,
+        " elementType ": "geometría" ,
+        " estilistas ": [
+            {
+                " ligereza ": 30 
+            } ,
+            {
+                " saturación ": "9" 
+            } ,
+            {
+                " color ": "# 29446b" 
+            }
+        ]
+    } ,
+    {
+        " featureType ": "poi" ,
+        " elementType ": "geometría" ,
+        " estilistas ": [
+            {
+                " saturación ": 20 
+            }
+        ]
+    } ,
+    {
+        " featureType ": "poi.park" ,
+        " elementType ": "geometría" ,
+        " estilistas ": [
+            {
+                " ligereza ": 20 
+            } ,
+            {
+                " saturación ": - 20 
+            }
+        ]
+    } ,
+    {
+        " featureType ": "carretera" ,
+        " elementType ": "geometría" ,
+        " estilistas ": [
+            {
+                " ligereza ": 10 
+            } ,
+            {
+                " saturación ": - 30 
+            }
+        ]
+    } ,
+    {
+        " featureType ": "carretera" ,
+        " elementType ": "geometry.fill" ,
+        " estilistas ": [
+            {
+                " color ": "# 193a55" 
+            }
+        ]
+    } ,
+    {
+        " featureType ": "carretera" ,
+        " elementType ": "geometry.stroke" ,
+        " estilistas ": [
+            {
+                " saturación ": 25 
+            } ,
+            {
+                " ligereza ": 25 
+            } ,
+            {
+                " peso ": "0.01" 
+            }
+        ]
+    } ,
+    {
+        " featureType ": "agua" ,
+        " elementType ": "todos" ,
+        " estilistas ": [
+            {
+                " ligereza ": - 20 
+            }
+        ]
+    } 
+]

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="EcobankRepartidor.Vistas.Login"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows">
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#FFE548" Offset="0.1"/>
+                <GradientStop Color="#F66746" Offset="1.0"/>
+
+            </LinearGradientBrush>
+        </Grid.Background>
+        <sh:Shadows CornerRadius="30" Shades="{sh:SingleShade 
+                Offset='0,7',
+                Opacity=0.6,
+                Color=#FFE548}">
+            <Frame Margin="40,100,40,50"
+               CornerRadius="30"
+               HasShadow="False">
+            
+        <ScrollView>
+              <StackLayout Orientation="Vertical" VerticalOptions="Center"
+                            Margin="0,20,0,0">
+            <StackLayout IsVisible="{Binding VisibleInicio}"
+                VerticalOptions="Center"
+                         >
+                        <Label Text="Bienvenido, tu aporte al cuidado del planeta inicia aquí"
+                               FontSize="15"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#00DE87"
+                               CharacterSpacing="1"/>
+                        <Frame BackgroundColor="#29FEC5" 
+                               WidthRequest="150"
+                               HorizontalOptions="Start"
+                               HeightRequest="5"
+                               Padding="0"
+                               HasShadow="False">
+                            
+                        </Frame>
+                            <Frame BackgroundColor="#F66746" 
+                               WidthRequest="40"
+                               HorizontalOptions="Start"
+                               HeightRequest="5"
+                               Padding="0"
+                               HasShadow="False">
+
+                        </Frame>
+                            <Frame BackgroundColor="#FFE548" 
+                               WidthRequest="10"
+                               HorizontalOptions="Start"
+                               HeightRequest="5"
+                               Padding="0"
+                               HasShadow="False">
+
+                            </Frame>
+                            <Image Source="camionb.png"
+                   VerticalOptions="Center"
+                   HeightRequest="100"
+                      />
+                <StackLayout Orientation ="Horizontal"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                            <Label Text="ECO"
+                   FontSize="40"
+                       FontAttributes="Bold"
+                                   TextColor="#3ED49A"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center"/>
+
+                    <Label Text="bank"
+                   FontSize="30"
+                       FontAttributes="Bold"
+                   VerticalOptions="Center"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Orientation ="Vertical"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                                <Frame CornerRadius="15"
+                                       HasShadow="False"
+                                       BackgroundColor="White" BorderColor="#AAFACE"
+                                       Padding="10">
+                                       <StackLayout Orientation="Horizontal">
+                        <Image Source="tierra.png"
+                               HeightRequest="22"/>
+                        <Entry Text="{Binding txtCorreo}"
+                               Placeholder="Correo"
+                               
+                    
+                       HorizontalTextAlignment="Start"
+                               WidthRequest="240"
+                       TextColor="#00935A"
+                       FontAttributes="Bold"
+                      />
+
+                    </StackLayout>
+                                </Frame>
+                              
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="patron.png"
+                               HeightRequest="22"/>
+                                        <Entry Text="{Binding txtPass}"
+                               Placeholder="Contraseña"
+                    IsPassword="True"
+                       HorizontalTextAlignment="Start"
+                               WidthRequest="240"
+                       TextColor="#00935A"
+                       FontAttributes="Bold"
+                      />
+                                    </StackLayout>
+                             
+                                    
+                                <sh:Shadows CornerRadius="15" Shades="{sh:SingleShade 
+                Offset='0,5',
+                Opacity=0.6,
+                Color=#00F26D}"
+                                            >
+                                    <Button Text="Acceder"
+                        TextTransform="None"
+                        BackgroundColor="#3ED49A"
+                        CornerRadius="15"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        TextColor="White"
+                        Command="{Binding IniciarSesioncommand}"
+                         Margin="0,50,0,20"
+                                            VerticalOptions="EndAndExpand"/>
+                                </sh:Shadows>
+
+                            </StackLayout>
+            </StackLayout>
+
+            <!--<Image Source="https://i.ibb.co/wKc6FVz/carga-inalambrica.png" VerticalOptions="CenterAndExpand"
+                   Margin="15"
+                   IsVisible="{Binding VisibleFinal}"/>-->
+            <lottie:AnimationView  
+                                 Animation="reciclaload.json"
+                                 AutoPlay="True"
+                                 HeightRequest="250"
+                                 WidthRequest="300"
+                                 RepeatMode="Infinite"
+                                 VerticalOptions="Center"
+                                 IsVisible="{Binding VisibleFinal}"
+                             />
+            <StackLayout IsVisible="{Binding Sininternetv}"
+                         >
+                <lottie:AnimationView 
+                                 Animation="sininternet.json"
+                                 AutoPlay="True"
+                                 HeightRequest="250"
+                                 WidthRequest="300"
+                                 RepeatMode="Infinite"
+                                 VerticalOptions="Center"
+                                 
+                             />
+                <Label Text="Sin internet"
+                       FontSize="30"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                      FontAttributes="Bold"/>
+                <Button Text="Volver a intentarlo"
+                        HorizontalOptions="Center"
+                        CornerRadius="15"
+                        BackgroundColor="#27E58F"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                       />
+            </StackLayout>
+
+
+        </StackLayout>
+        </ScrollView>
+        </Frame>
+                    </sh:Shadows>
+      
+        <Image Source="https://i.ibb.co/c3Qk80K/hojas.png"
+               VerticalOptions="Start"
+               HorizontalOptions="Start"
+               HeightRequest="100"
+               Margin="10,40,0,0"/>
+      
+    </Grid>
+</ContentPage>
